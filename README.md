@@ -92,5 +92,4 @@ python main.py
 
 - Proyecto 100% reproducible  
 - Código limpio y modular  
-- Compatible con Google Colab  
-- GPU cambia el juego. CPU... te deja viendo las estrellas 🌌  
+- Compatible con Google Colab 
