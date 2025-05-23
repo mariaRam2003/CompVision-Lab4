@@ -92,4 +92,25 @@ python main.py
 
 - Proyecto 100% reproducible  
 - Código limpio y modular  
-- Compatible con Google Colab 
+- Compatible con Google Colab
+
+# 🛠️ Recomendaciones para Mejorar la Calidad de Imágenes Filtradas
+
+Durante las pruebas del modelo **U-Net** entrenado con ventanas deslizantes, se observaron salidas pixeladas o con artefactos tipo mosaico. A continuación se listan recomendaciones clave para mejorar la calidad del resultado final:
+
+## ✅ Recomendaciones
+
+| Paso | Recomendación |
+|------|---------------|
+| ✅ 1 | **Aumentar el tamaño de ventana (`window_size`)**: Se sugiere usar `64` o `128` para que el modelo capture estructuras más amplias. |
+| ✅ 2 | **Reducir el `stride` en la inferencia**: Usar `stride=8` o `4` suaviza la reconstrucción al solapar más las ventanas. |
+| ✅ 3 | **Ampliar la capacidad del modelo U-Net**: Agregar más filtros por capa (por ejemplo: `64 → 128 → 256 → 512`) mejora la capacidad de aprendizaje. |
+| ✅ 4 | **Revisar la activación de salida**: Sustituir `sigmoid` por `linear` o `tanh` y normalizar las imágenes en `[0, 1]` o `[-1, 1]` según corresponda. |
+| ✅ 5 | **Utilizar funciones de pérdida perceptuales**: Probar `SSIM`, `MAE` o una pérdida mixta como: |
+
+```python
+def mixed_loss(y_true, y_pred):
+    return 0.8 * tf.reduce_mean(tf.square(y_true - y_pred)) + \
+           0.2 * tf.image.ssim(y_true, y_pred, max_val=1.0)
+```
+| ✅ 6 | **Reducir el nivel de suavizado del filtro anisotrópico**: Usar valores más suaves como `niter=20`, `gamma=0.1` evita que se pierdan detalles esenciales en las imágenes objetivo. |
