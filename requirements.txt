@@ -1,0 +1,8 @@
+# This file is used to install the required packages for the lab.
+numpy==1.26.4
+tensorflow==2.15.0
+opencv-python==4.9.0.80
+matplotlib==3.8.4
+scikit-learn==1.4.2
+tqdm==4.66.2
+ipykernel==6.29.3
