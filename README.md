@@ -88,24 +88,9 @@ python main.py
 
 ---
 
-## 📁 Estructura del Proyecto
+## 📌 Notas Finales
 
-📦CompVision-Lab4/
- ┣ 📁BSDS500/
- ┃ ┣ 📁bench/
- ┃ ┣ 📁BSDS500/
- ┃ ┃ ┣ 📁data/
- ┃ ┃ ┃ ┣ 📁images/
- ┃ ┃ ┃ ┃ ┣ 📁test/
- ┃ ┃ ┃ ┃ ┃ ┣📄imagenes a usar/
- ┃ ┃ 📁documentation/
- ┃ ┗ 📁grouping/
- ┣ 📁src/
- ┃ ┣ 📄AnisotropicExample.py/
- ┃ ┣ 📄AntisotropocLab.ipynb/
- ┃ ┗ 📄Investigacion.ipynb/
- ┣ 📄README.md
- ┣ 📄requirements.txt
- ┣ 📄.gitattributes
- ┗ 📄.gitignore
-
+- Proyecto 100% reproducible  
+- Código limpio y modular  
+- Compatible con Google Colab  
+- GPU cambia el juego. CPU... te deja viendo las estrellas 🌌  
